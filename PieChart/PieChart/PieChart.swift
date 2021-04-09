@@ -21,7 +21,12 @@ struct PieChart: UIViewRepresentable {
 
     func updateUIView(_ uiView: PieChartView, context: Context) {
         let dataSet = PieChartDataSet(entries: entries)
-        dataSet.colors = [.red, .blue, .green]
+        dataSet.colors = [
+            UIColor(named: "ColorBlueberryLight")!,
+            UIColor(named: "ColorPearLight")!,
+            UIColor(named: "ColorPlumLight")!,
+            UIColor(named: "ColorLemonLight")!,
+        ]
         let pieChartData = PieChartData(dataSet: dataSet)
         uiView.data = pieChartData
         
@@ -82,3 +87,8 @@ struct PieChart: UIViewRepresentable {
 }
 
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
